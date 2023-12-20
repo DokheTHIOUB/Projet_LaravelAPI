@@ -10,7 +10,7 @@ class Candidature extends Model
 
     protected $fillable=[
         'user_id',
-        'user_formation',
+        'formation_id',
         'statut',
     ] ;
 
