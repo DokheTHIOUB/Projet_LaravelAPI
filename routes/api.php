@@ -45,5 +45,5 @@ Route::post('logout', [AuthController::class, 'logout']);
 Route::middleware(['auth:api','user'])->group(function (){
 //Candidatures
 Route::post('candidature/enregistrer', [CandidatureController::class, 'store']);
-Route::post('logout', [AuthController::class, 'logout']);
+Route::post('log', [AuthController::class, 'logout']);
 });
