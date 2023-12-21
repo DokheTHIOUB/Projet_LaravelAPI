@@ -33,10 +33,10 @@ Route::middleware(['auth:api','admin'])->group(function (){
     //CRUD des formations
 Route::post('/formation/create', [FormationController::class, 'store']);
 Route::delete('formation/{formation}', [FormationController::class, 'destroy']);
-Route::put('formation/edit/{formation}', [FormationController::class, 'update']);
+Route::post('formation/edit/{formation}', [FormationController::class, 'update']);
    //Candidatures
 Route::get('candidature/lister', [CandidatureController::class, 'index']);
-Route::post('candidature/statut',[CandidatureController::class,'statut']);
+Route::post('candidature/statut/{candidature}',[CandidatureController::class,'statut']);
 Route::post('candidature/accepter',[CandidatureController::class,'AccepterCandidature']);
 Route::post('candidature/refuser',[CandidatureController::class,'RefuserCandidature']);
 Route::post('logout', [AuthController::class, 'logout']);

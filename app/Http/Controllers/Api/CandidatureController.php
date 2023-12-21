@@ -70,13 +70,13 @@ class CandidatureController extends Controller
     public function AccepterCandidature(Candidature $candidature)
     {
         try {
-            if ($candidature->statut=== 'accepter') {
+            
                 return response()->json([
                     'status_code' => 200,
                     'status_message' => 'Voici la liste des candidatures acceptées',
-                    'candidature' => Candidature::where('accepter')->get(),
+                    'candidature' => Candidature::where('statut','accepter')->get(),
                 ]);
-            }
+            
         } catch (Exception $e) {
             return response()->json($e);
         }
@@ -86,13 +86,13 @@ class CandidatureController extends Controller
     public function RefuserCandidature(Candidature $candidature)
     {
         try {
-            if ($candidature->statut=== 'accepter') {
+           
                 return response()->json([
                     'status_code' => 200,
-                    'status_message' => 'Voici la liste des candidatures acceptées',
-                    'candidature' => Candidature::where('accepter')->get(),
+                    'status_message' => 'Voici la liste des candidatures refusés',
+                    'candidature' => Candidature::where('statut', 'refusé')->get(),
                 ]);
-            }
+            
         } catch (Exception $e) {
             return response()->json($e);
         }
