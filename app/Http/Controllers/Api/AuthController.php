@@ -20,6 +20,8 @@ class AuthController extends Controller
             ]);
     }
 
+ 
+
     public function register(Request $req){
   
         $req->validate([

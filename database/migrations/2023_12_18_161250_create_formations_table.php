@@ -12,12 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('formations', function (Blueprint $table) {
+
             $table->id();
             $table->string('nom_formation');
             $table->text('description');
             $table->string('duree');
             $table->enum('statut',['en attente','en cours', 'terminee', 'annuler'])->default('en attente');
             $table->timestamps();
+
         });
     }
 
